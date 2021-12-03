@@ -23,7 +23,7 @@ class MainKtTest {
             cardType = typeOfCard
         )
 
-        assertEquals(3_500, result)
+        assertEquals(0, result)
     }
 
     @Test
