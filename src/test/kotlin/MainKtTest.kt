@@ -65,7 +65,7 @@ class MainKtTest {
 
     @Test
     fun visaMir_is_correct_lessLimit() {
-        val amountTest = 6_000
+        val amountTest = 6_000_000
 
         val result = visaMir(
             amount = amountTest

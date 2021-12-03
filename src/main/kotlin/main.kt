@@ -1,5 +1,3 @@
-import java.time.Month
-
 const val previousMonthPayments = 0
 const val amount = 100_000
 const val cardType = "VK Pay"
