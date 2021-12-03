@@ -1,3 +1,5 @@
+import java.time.Month
+
 const val previousMonthPayments = 0
 const val amount = 100_000
 const val cardType = "VK Pay"
@@ -8,14 +10,14 @@ fun main() {
 
 fun cardTypeChooser(cardType: String): Int {
     val cardTypeSwitch = when (cardType) {
-        "Mastercard", "Maestro" -> mastercardMaestro(amount)
+        "Mastercard", "Maestro" -> mastercardMaestro(previousMonthPayments, amount)
         "Visa", "Mir" -> visaMir(amount)
         else -> vkPay()
     }
     return cardTypeSwitch
 }
 
-fun mastercardMaestro(amount: Int): Int {
+fun mastercardMaestro(previousMonthPayments: Int, amount: Int): Int {
     val commissionMastercardMaestro = when (previousMonthPayments) {
         in 0..7_500_000 -> 0
         else -> (amount * 0.006 + 2_000)
